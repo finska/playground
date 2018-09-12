@@ -1,0 +1,7 @@
+%h3 All patients:
+- @patients.each_with_index do |patient, index|
+  = "#{index + 1}. "
+  = patient.name
+  = "-"
+  = patient.description
+  %br
