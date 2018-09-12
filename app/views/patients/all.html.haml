@@ -1,7 +1,8 @@
 %h3 All patients:
+- change = Service.new
 - @patients.each_with_index do |patient, index|
   = "#{index + 1}. "
-  = patient.name
+  = change.uppercase(patient.name)
   = "-"
   = patient.description
   %br
