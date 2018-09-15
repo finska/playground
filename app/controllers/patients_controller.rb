@@ -5,10 +5,14 @@ class PatientsController < ApplicationController
     @patients = Patient.all
   end
   
-  def uppercase_patients
-    change = Service.new
-    patients.each do |patient|
-      change.uppercase(patient)
+  def error
+    begin
+      change = Service.new
+      change.error_test(1)
+      change.error_test(2)
+    rescue => e
+      flash[:status] = e
     end
+  
   end
 end
